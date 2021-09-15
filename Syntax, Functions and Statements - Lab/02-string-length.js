@@ -4,3 +4,5 @@ function stringLength(firstParam, secondParm, thirdParam) {
     console.log(sumLength);
     console.log(averageLength);
 }
+
+stringLength("first", "second", "third");
