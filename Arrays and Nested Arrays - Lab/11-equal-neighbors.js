@@ -23,7 +23,7 @@ function equalNeighbors(matrix) {
       }
     }
   }
-  console.log(counter);
+  console.log(Math.ceil(counter / 2));
 }
 
 equalNeighbors([
