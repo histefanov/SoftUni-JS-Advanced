@@ -42,4 +42,4 @@ function spiralMatrix(rows, columns) {
   }
 }
 
-spiralMatrix(3, 3);
+spiralMatrix(1, 6);
