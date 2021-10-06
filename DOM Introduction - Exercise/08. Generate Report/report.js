@@ -23,5 +23,5 @@ function generateReport() {
     }
 
     document.getElementById('output').value = JSON.stringify(result);
-    console.log(JSON.stringify(result));
+    //console.log(JSON.stringify(result));
 }
