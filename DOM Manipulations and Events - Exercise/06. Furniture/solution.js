@@ -33,14 +33,29 @@ function solve() {
       checkbox.setAttribute('type', 'checkbox');
       row.children[4].appendChild(checkbox);
 
-      table.appendChild(row);   
+      table.appendChild(row);  
     }
   })
 
   buyBtn.addEventListener('click', (ev) => {
     const markedItems = Array.from(document.querySelectorAll('tbody tr'))
-      .filter((r) => r.lastElementChild.firstChild.checked == true);
+      .filter((r) => r.lastElementChild.firstChild.checked == true)
+      .map((r) => {
+        const name = r.children[1].firstChild.textContent;
+        const price = Number(r.children[2].firstChild.textContent);
+        const decFactor = Number(r.children[3].firstChild.textContent);
 
-    console.log(markedItems);
+        return {
+          name,
+          price,
+          decFactor
+        }
+      })
+
+    const boughtFurniture = `Bought furniture: ${markedItems.map((i) => i.name).join(', ')}`;
+    const totalPrice = `Total price: ${markedItems.map((i) => i.price).reduce((a, b) => a + b, 0).toFixed(2)}`;
+    const avgDec = `Average decoration factor: ${(markedItems.map((i) => i.decFactor).reduce((a, b) => a + b, 0) / markedItems.length)}`
+
+    buyTextarea.value = boughtFurniture + '\n' + totalPrice + '\n' + avgDec;
   })
 }
