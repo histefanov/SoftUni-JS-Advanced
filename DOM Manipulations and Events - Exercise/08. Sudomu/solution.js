@@ -33,5 +33,7 @@ function solve() {
 
     function clear() {
         inputs.forEach((i) => i.value = '');
+        table.style.border = 'none';
+        resultBox.textContent = '';
     }
 }
