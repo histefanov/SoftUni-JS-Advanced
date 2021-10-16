@@ -40,7 +40,7 @@ function solve() {
             const input = movie.querySelector('input');
             const soldTickets = input.value;
 
-            if (soldTickets || soldTickets === '0') {
+            if (Number(soldTickets) || soldTickets === '0') {
                 const movieName = movie.querySelector('span');
                 const price = Number(movie.querySelector('div strong').textContent);
 
