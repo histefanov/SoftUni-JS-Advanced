@@ -38,19 +38,19 @@ function solve() {
         if (e.target.tagName == 'BUTTON') {
             const movie = e.target.parentElement.parentElement;
             const input = movie.querySelector('input');
-            const soldTickets = Number(input.value);
+            const soldTickets = input.value;
 
-            if (soldTickets) {
+            if (soldTickets || soldTickets === '0') {
                 const movieName = movie.querySelector('span');
                 const price = Number(movie.querySelector('div strong').textContent);
 
                 const li = createElement('li', {});
                 li.appendChild(movieName.cloneNode(true));
-                li.appendChild(createElement('strong', {}, `Total amount: ${(price * soldTickets).toFixed(2)}`));
+                li.appendChild(createElement('strong', {}, `Total amount: ${(price * Number(soldTickets)).toFixed(2)}`));
                 li.appendChild(createElement('button', {}, 'Delete'));
                 
                 archiveSection.appendChild(li);
-                input.value = '';
+                movie.remove();
             }
         }
     }
