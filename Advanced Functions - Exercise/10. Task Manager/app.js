@@ -1,6 +1,7 @@
 function solve() {
-    const [addSection, inProgressSection, completeSection] = Array.from(document.getElementsByTagName('section')).slice(1);
+    const [addSection, inProgressSection, completeSection] = Array.from(document.querySelectorAll('section')).slice(1);
     const addBtn = document.getElementById('add');
+
     addBtn.addEventListener('click', addTask);
     addSection.addEventListener('click', manageOpenTask);
     inProgressSection.addEventListener('click', manageTasksInProgress);
@@ -69,7 +70,7 @@ function solve() {
             } else {        
                 const article = e.target.parentElement.parentElement;
                 article.lastElementChild.remove();
-                completeSection.appendChild(article);
+                completeSection.lastElementChild.appendChild(article);
             }
         }
     }
