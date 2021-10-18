@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha 03-char-lookup.test.js"
+    "test": "mocha 04-math-enforcer.test.js"
   },
   "keywords": [],
   "author": "",
